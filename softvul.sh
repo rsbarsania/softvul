@@ -1,9 +1,10 @@
 #!/bin/bash
 
-var=$1
+varx=$1
 Vr=$2
 bar=$(echo "$Vr" | cut -d "." -f 1,2)
-
+var=$(echo "$varx" | sed 's/ /+/g')
+varg=$(echo "$varx" | cut -d ' ' -f 1)
 Banner(){
 echo -e "\033[5;31;40m .oooooo..o            .o88o.     .   oooooo     oooo             oooo \033[0m"
 echo -e "\033[5;31;40md8P      Y8            888      .o8     888.     .8                888 \033[0m"
@@ -25,7 +26,7 @@ grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" | sort -u | grep -i '/cve' | sort
 
 XGrep(){
 echo -e "\n\033[5;31;40m[+] Extracting Description For Possible CVE's Of $var $Vr\033[0m\n"
-while IFS= read xyz; do echo -e "\e[35m$xyz\e[0m" && curl -ks1 "$xyz" | grep -i -A1 'cvedetailssummary\|vuln-description-title' | grep -i "$var" | grep -v -i  'cvedetailssummary\|vuln-description-title' | sed 's/<br>//g' | sed 's/<p data-testid="vuln-description">//g' | sed 's/<\/p><br\/>//g' && echo -e "\n" ; done < url.log | tee out.log
+while IFS= read xyz; do echo -e "\e[35m$xyz\e[0m" && curl -ks1 "$xyz" | grep -i -A1 'cvedetailssummary\|vuln-description-title' | grep -i "$varg" | grep -v -i  'cvedetailssummary\|vuln-description-title' | sed 's/<br>//g' | sed 's/<p data-testid="vuln-description">//g' | sed 's/<\/p><br\/>//g' && echo -e "\n" ; done < url.log | tee out.log
 }
 
 Note(){
