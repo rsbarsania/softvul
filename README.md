@@ -1,2 +1,2 @@
 # softvul
-A tool to find out URL for a given CVE.
+A tool to find out URL for a given Library.
