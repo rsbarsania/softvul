@@ -15,7 +15,7 @@ echo -e "\033[5;31;40moo     .d8P 888   888  888      888 .       888        888
 echo -e "\033[5;31;40m8  88888P    Y8bod8P  o888o      888         8          V88V V8P  o888o\033[0m"
 
 echo ''
-echo -e "\t\t\t\t....CVE URL Extractor V 1.0 - By Rishabh Singh"
+echo -e "\t\t\t\t....CVE URL Extractor V1.0 - By Rishabh Singh"
 }
 
 Search(){
