@@ -1,5 +1,5 @@
 # softvul
-A tool to find out URL for a given Library.
+A tool to find the CVE details with URL & description of the Vulnerable software/library.
 
 
 ## Installation:
