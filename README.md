@@ -10,5 +10,9 @@ git clone https://github.com/rsbarsania/softvul.git && cd softvul && chmod +x *.
 ## Usage:
 
 ```
-./softvul.sh jquery 1.12.1
+./softvul.sh -u https://www.example.com/
+```
+```
+./softvul.sh -s <software> -v <version>
+./softvul.sh -s jquery -v 1.12.1
 ```
