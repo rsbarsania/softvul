@@ -29,7 +29,7 @@ echo -e "\n\e[32m[+] Extracting Description For Possible CVE's Of\e[31m $var $Vr
 
 while IFS= read xyz; 
 do 
-cd=$(curl -ks1 "$xyz" | grep -i -A1 'cvedetailssummary\|vuln-description-title')
+cd=$(curl -ks1 "$xyz" | grep -i -A2 'cvedetailssummary\|vuln-description-title')
 
 if echo "$cd" | grep -i "$varg" &> /dev/null ; then 
   echo -e "\e[35m$xyz\e[0m" && echo "$cd" | grep -i "$varg" | grep -v -i  'cvedetailssummary\|vuln-description-title' | sed 's/<br>//g' | sed 's/<p data-testid="vuln-description">//g' | sed 's/<\/p><br\/>//g' && echo -e "\n";
